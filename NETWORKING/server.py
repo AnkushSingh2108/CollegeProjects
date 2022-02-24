@@ -26,6 +26,8 @@ def handle_client(conn, addr):
 
             print(f"[{addr}] {msg}")
             conn.send("Msg received".encode(FORMAT))
+            conn.send("Welcome to our Server".encode(FORMAT))
+            conn.send("If You want to exit at any time then you can enter \"exit\" and press enter\n".encode(FORMAT))
 
     conn.close()
         

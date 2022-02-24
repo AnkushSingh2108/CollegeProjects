@@ -19,10 +19,11 @@ def send(msg):
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
 
-send("Hello World!")
-input()
-send("Hello Everyone!")
-input()
-send("Hello Ankush")
-input()
-send(DISCONNECT_MESSAGE)
+
+no_of_msgs = int(input("Enter the number of messages you want to send\n"))
+
+for i in range(no_of_msgs):
+    text = input(f"Enter your {i} message\n")
+    send(text)
+    if text == "exit":
+        send(DISCONNECT_MESSAGE)
